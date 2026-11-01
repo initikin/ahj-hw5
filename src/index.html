@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f3ef">
+    <title>Чат</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <a class="brand" href="./" aria-label="Чат — главная"><img alt="" width="38" height="38">Чат</a>
+        <div class="connection"><span class="status-dot"></span><span id="status" role="status">Войдите в чат</span></div>
+      </header>
+      <div class="chat-layout">
+        <aside class="participants" aria-labelledby="participants-title">
+          <div class="panel-heading"><h1 id="participants-title">Участники</h1><span id="user-count" class="count">0</span></div>
+          <ul id="users" class="users" aria-live="polite"></ul>
+          <p id="users-empty" class="users-empty">Здесь появятся участники чата</p>
+        </aside>
+        <section class="conversation" aria-labelledby="conversation-title">
+          <div class="conversation-heading"><div><h2 id="conversation-title">Общий чат</h2><p>Место для ваших разговоров</p></div><button id="logout" class="button-quiet" type="button" disabled>Выйти</button></div>
+          <div class="message-area">
+            <div id="empty-chat" class="empty-chat"><span class="empty-icon" aria-hidden="true">···</span><h3>Начните разговор</h3><p>Напишите первое сообщение</p></div>
+            <ol id="messages" class="messages" role="log" aria-label="Сообщения чата" aria-live="polite" aria-relevant="additions"></ol>
+          </div>
+          <form id="message-form" class="composer">
+            <label class="visually-hidden" for="message">Ваше сообщение</label>
+            <input id="message" name="message" placeholder="Напишите сообщение…" maxlength="4000" autocomplete="off" required disabled>
+            <button id="send" class="button-primary send-button" type="submit" aria-label="Отправить сообщение" disabled><span aria-hidden="true">↗</span></button>
+            <p id="message-error" class="form-error composer-error" role="alert"></p>
+          </form>
+        </section>
+      </div>
+      <footer class="app-footer">Разговор начинается с простого «привет»</footer>
+    </main>
+    <dialog id="login-dialog" class="login-dialog" aria-labelledby="login-title">
+      <form id="login-form" class="login-form">
+        <span class="dialog-mark" aria-hidden="true">···</span>
+        <h2 id="login-title">Выберите псевдоним</h2>
+        <p class="dialog-description">Так вас будут видеть другие участники чата</p>
+        <label for="nickname">Ваш псевдоним</label>
+        <input id="nickname" name="nickname" placeholder="Например, Александра" maxlength="40" autocomplete="nickname" aria-describedby="login-error" required autofocus>
+        <p id="login-error" class="form-error" role="alert"></p>
+        <button id="login-submit" class="button-primary" type="submit">Продолжить</button>
+      </form>
+    </dialog>
+  </body>
+</html>

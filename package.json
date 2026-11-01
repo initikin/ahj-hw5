@@ -1,0 +1,29 @@
+{
+  "name": "ahj-hw5-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Чат на WebSocket",
+  "workspaces": ["backend"],
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "server": "npm run start --workspace backend",
+    "build": "webpack --mode production",
+    "lint": "eslint ."
+  },
+  "engines": { "node": ">=22.14.0" },
+  "browserslist": ["defaults"],
+  "devDependencies": {
+    "@babel/core": "^7.26.8",
+    "@babel/preset-env": "^7.26.8",
+    "@eslint/js": "^10.0.1",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "eslint": "^10.13.0",
+    "globals": "^16.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
