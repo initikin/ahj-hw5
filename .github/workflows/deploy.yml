@@ -38,16 +38,16 @@ jobs:
         env:
           CHAT_API_URL: ${{ vars.CHAT_API_URL || 'http://localhost:3000/' }}
       - name: Configure Pages
-        if: github.event_name != 'pull_request' && vars.CHAT_API_URL != ''
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - name: Upload site
-        if: github.event_name != 'pull_request' && vars.CHAT_API_URL != ''
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
   deploy:
-    if: github.event_name != 'pull_request' && vars.CHAT_API_URL != ''
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     permissions:
